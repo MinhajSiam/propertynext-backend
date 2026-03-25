@@ -8,7 +8,16 @@ const projectSchema = new mongoose.Schema({
     coverImage: { type: String, required: true },
     price: { type: String },
     size: { type: String },
-    handoverDate: { type: String }
+    handoverDate: { type: String },
+    overview: { type: String },
+    tourThumb: { type: String },
+    mapUrl: { type: String },
+    gallery: { type: [String] }, // একাধিক ছবির জন্য Array
+    floorPlans: {
+        typeA: { type: String },
+        typeB: { type: String },
+        ground: { type: String }
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Project', projectSchema);

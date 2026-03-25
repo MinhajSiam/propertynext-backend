@@ -55,4 +55,17 @@ router.delete('/delete/:id', async (req, res) => {
     }
 });
 
+// ৫. নির্দিষ্ট একটি প্রজেক্টের ডেটা দেখার API (GET Request)
+router.get('/single/:id', async (req, res) => {
+    try {
+        const project = await Project.findById(req.params.id);
+        if (!project) {
+            return res.status(404).json({ error: "Project not found" });
+        }
+        res.status(200).json(project);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch project details" });
+    }
+});
+
 module.exports = router;

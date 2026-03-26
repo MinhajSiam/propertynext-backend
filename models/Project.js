@@ -17,7 +17,13 @@ const projectSchema = new mongoose.Schema({
         typeA: { type: String },
         typeB: { type: String },
         ground: { type: String }
-    }
+    },
+    // Technical Specs & Locations
+    specStructural: { type: String },
+    specFlooring: { type: String },
+    specKitchen: { type: String },
+    specElectrical: { type: String },
+    locationAdvantages: { type: String }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Project', projectSchema);
